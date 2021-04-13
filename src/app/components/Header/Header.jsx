@@ -8,6 +8,7 @@ import {
   NavDropdown,
 } from "react-bootstrap";
 import { Person, Cart } from "react-bootstrap-icons";
+import logo from "../../../images/logo1.png";
 
 const Header = () => {
   return (
@@ -17,17 +18,22 @@ const Header = () => {
       bg="white"
       variant="light"
     >
+
+      <img
+        src={logo}
+        style={{ width: "10%", height: "10%", paddingLeft: "5px" }}
+        href="/"
+      ></img>
+
       <Nav className="mr-auto">
-        <Nav.Link href="#home">Home</Nav.Link>
-        <Nav.Link href="#about-us">About Us</Nav.Link>
+        <Nav.Link href="/">Home</Nav.Link>
+        <Nav.Link href="/product">Product</Nav.Link>
         <NavDropdown title="Categories" id="collasible-nav-dropdown">
-          <NavDropdown.Item href="#action/3.1">Category1</NavDropdown.Item>
-          <NavDropdown.Item href="#action/3.2">Category2</NavDropdown.Item>
-          <NavDropdown.Item href="#action/3.3">Category3</NavDropdown.Item>
+          <NavDropdown.Item href="/categories">Category Page</NavDropdown.Item>
+          <NavDropdown.Item href="/product">Product Page</NavDropdown.Item>
+          <NavDropdown.Item href="/">Home</NavDropdown.Item>
         </NavDropdown>
       </Nav>
-
-      <Cart className="mr-4" color="grey" size={30} />
 
       <Form inline>
         <FormControl type="text" placeholder="Search" className="mr-sm-2" />
@@ -35,6 +41,8 @@ const Header = () => {
       </Form>
 
       <Person className="ml-3" color="grey" size={30} />
+
+      <Cart className="ml-3" color="grey" size={30} />
     </Navbar>
   );
 };

@@ -1,11 +1,9 @@
 import "./App.css";
-import ProductPage from "./app/pages/Product";
-// import Home from "./app/pages/Home";
-// import Categories from "./app/pages/Categories";
+import Router from "./Router/Router";
 
 function App() {
-  return <ProductPage/>;
-  // return <Home/>;
-  // return <Categories/>;
+  return(
+    <Router/>
+  )
 }
 export default App;
