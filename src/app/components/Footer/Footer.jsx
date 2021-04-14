@@ -1,11 +1,6 @@
 import React from "react";
 import {
-  Nav,
-  Navbar,
-  Form,
-  FormControl,
-  NavDropdown,
-  Button,
+  Nav
 } from "react-bootstrap";
 
 const Footer = () => {
