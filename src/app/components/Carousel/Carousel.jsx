@@ -1,5 +1,5 @@
 import React from "react";
-import { Carousel, Button } from "react-bootstrap";
+import { Carousel} from "react-bootstrap";
 
 const Slide = () => {
   return (

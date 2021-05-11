@@ -1,5 +1,5 @@
 import React from "react";
-import { ADD_BOOK_LIST, FILTER_BOOK_LIST } from "../Actions/Types";
+import { ADD_BOOK_LIST, FILTER_BOOK_LIST, ADD_BOOK_CATEGORIES  } from "../Actions/Types";
 
 const initialState = {
   state: [],
