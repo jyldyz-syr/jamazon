@@ -2,12 +2,13 @@ import React from "react";
 import { ADD_BOOK_LIST, FILTER_BOOK_LIST, ADD_BOOK_CATEGORIES  } from "../Actions/Types";
 
 const initialState = {
-  state: [],
+  books: [],
 };
 
 export default function bookReducer(state = initialState, action) {
   switch (action.type) {
     case ADD_BOOK_LIST:
+
       return {
         ...state,
         bookList: action.payload,
@@ -24,7 +25,7 @@ export default function bookReducer(state = initialState, action) {
         ...state,
         filterList: action.payload,
       };
-
+  
     default:
       return state;
   }

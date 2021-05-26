@@ -7,6 +7,9 @@ import PaginationComponent from "../components/Pagination/Pagination";
 
 
 const Categories = () => {
+  
+
+
   return (
     <Container>
       <Header />
