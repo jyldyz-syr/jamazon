@@ -7,7 +7,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import { createStore, compose, applyMiddleware } from "redux";
 
 import thunk from 'redux-thunk';
-import rootReducer from "./store/Reducers/bookReducer";
+import rootReducer from "./store/Reducers/rootReducer";
 
 const composeEnhancers =
   typeof window === "object" && window.REDUX_DEVTOOLS_EXTENSION_COMPOSE

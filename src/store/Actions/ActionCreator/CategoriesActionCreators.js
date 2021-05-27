@@ -10,7 +10,7 @@ export const fetchCategories = () => async (dispatch) => {
         const res = await axios.get(`${process.env.REACT_APP_BASE_URL}/api/categories/getall`)
         dispatch({
             type: SET_CATEGORIES_LIST,
-            payload: res
+            payload: res.data.categories
         })
     } catch (error) {
         console.log(error)
