@@ -1,14 +1,31 @@
-import React from "react";
+import React, {useEffect} from "react";
 import { Container, Row, Col, Card, Button } from "react-bootstrap";
-import Carousel from "../Carousel/Carousel";
+import { Carousel} from "react-bootstrap";
 import Reviews from "../Reviews/Reviews";
+import { useSelector } from "react-redux";
+
+
 
 const ProductInfo = () => {
+  
+  const dataProduct = useSelector((state) => state.productState);
+
+  console.log(dataProduct)
+
+
   return (
     <Container className="pt-5 pb-5">
       <Row>
         <Col>
-          <Carousel />
+        <Carousel>
+      <Carousel.Item>
+        <img
+          className="d-block w-100"
+          src={dataProduct.product.image}
+          alt={dataProduct.product.title}
+        />
+      </Carousel.Item>
+    </Carousel>
         </Col>
         <Col>
           <Card
@@ -19,15 +36,14 @@ const ProductInfo = () => {
             }}
           >
             <Card.Header className="d-flex justify-content-center" style={{backgroundColor: "transparent"}}>
-              Book Title
+           {dataProduct.product.title}
             </Card.Header>
             <Card.Body>
-              <Card.Title>Light Card Title</Card.Title>
+              <Card.Title>{dataProduct.product.title}</Card.Title>
               <Card.Text>
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
+              {dataProduct.product.subtitle}
               </Card.Text>
-              <Button variant="secondary">Add to Cart</Button>
+              <Button variant="secondary">Add to Cart for  {dataProduct.product.price}</Button>
             </Card.Body>
           </Card>
         </Col>

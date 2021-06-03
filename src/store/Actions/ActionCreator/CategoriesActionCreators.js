@@ -15,5 +15,6 @@ export const fetchCategories = () => async (dispatch) => {
     } catch (error) {
         console.log(error)
     }
+ 
 }
 

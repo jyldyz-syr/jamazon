@@ -12,9 +12,9 @@ const Routes = () => {
       <BrowserRouter>
         <Switch>
           <Route exact path="/" component={Home} />;
-          <Route exact path="/categories" component={Categories} />
-          <Route exact path="/product" component={Product} />
-          <Route exact path="/all-categories" component={CategoriesLists} />
+          <Route path="/product" component={Product} />
+          <Route path="/all-categories" component={CategoriesLists} />
+          <Route path= "/categories/:item" component={Categories} />
         </Switch>
       </BrowserRouter>
     </div>

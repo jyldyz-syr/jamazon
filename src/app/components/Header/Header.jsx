@@ -5,7 +5,6 @@ import {
   Button,
   Form,
   FormControl,
-  NavDropdown,
 } from "react-bootstrap";
 import { Person, Cart } from "react-bootstrap-icons";
 import logo from "../../../images/logo1.png";
@@ -18,21 +17,18 @@ const Header = () => {
       bg="white"
       variant="light"
     >
-
       <img
         src={logo}
         style={{ width: "10%", height: "10%", paddingLeft: "5px" }}
-        href="/"
       ></img>
 
       <Nav className="mr-auto">
-        <Nav.Link href="/">Home</Nav.Link>
         <Nav.Link href="/all-categories">All Categories</Nav.Link>
-        <NavDropdown title="Categories" id="collasible-nav-dropdown">
-          <NavDropdown.Item href="/categories">Category Page</NavDropdown.Item>
-          <NavDropdown.Item href="/product">Product Page</NavDropdown.Item>
-          <NavDropdown.Item href="/">Home</NavDropdown.Item>
-        </NavDropdown>
+        <Nav.Link href="https://github.com/jyldyz-syr/jamazon">Front</Nav.Link>
+        <Nav.Link href="https://github.com/jyldyz-syr/jamazon-back">
+          Back
+        </Nav.Link>
+        <Nav.Link href="https://itbook.store/">API</Nav.Link>
       </Nav>
 
       <Form inline>

@@ -1,12 +1,12 @@
 import axios from "axios";
-import { SET_BOOKS} from "../Types";
+import { SET_PRODUCT} from "../Types";
 
-export const getCategoryBooks = (item) => async (dispatch) => {
+export const getProduct = (item) => async (dispatch) => {
   try {
       const res = await axios.get(`${process.env.REACT_APP_BASE_URL}/api/books/${item}`)
 
       dispatch({
-          type: SET_BOOKS,
+          type: SET_PRODUCT,
           payload: res.data
       })
 

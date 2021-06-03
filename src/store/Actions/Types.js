@@ -6,3 +6,5 @@ export const DELETE_BOOK = "DELETE_BOOK"
 
 
 export const SET_CATEGORIES_LIST = "SET_CATEGORIES_LIST"
+export const SET_BOOKS = "SET_BOOKS"
+export const SET_PRODUCT = "SET_PRODUCT"

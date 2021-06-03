@@ -25,9 +25,6 @@ const Reviews = () => {
                   for calling extra attention to featured content or
                   information.
                 </p>
-                <p>
-                  <Button variant="primary">Learn more</Button>
-                </p>
               </Jumbotron>
             </Tab.Pane>
             <Tab.Pane eventKey="second">
@@ -38,9 +35,7 @@ const Reviews = () => {
                   for calling extra attention to featured content or
                   information.
                 </p>
-                <p>
-                  <Button variant="primary">Learn more</Button>
-                </p>
+            
               </Jumbotron>
             </Tab.Pane>
           </Tab.Content>

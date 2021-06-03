@@ -3,16 +3,16 @@ import { useDispatch } from "react-redux";
 import { fetchCategories } from "../../../store/Actions/ActionCreator/CategoriesActionCreators";
 import { useSelector } from "react-redux";
 //materialUI
-import Button from '@material-ui/core/Button';
+import Button from "@material-ui/core/Button";
 import Card from "@material-ui/core/Card";
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
-import CardMedia from "@material-ui/core/CardMedia";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import Link from "@material-ui/core/Link";
+import { NavLink } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   icon: {
@@ -33,7 +33,7 @@ const useStyles = makeStyles((theme) => ({
     height: "100%",
     display: "flex",
     flexDirection: "column",
-    padding:"30px",
+    padding: "30px",
   },
   cardMedia: {
     paddingTop: "56.25%", // 16:9
@@ -52,7 +52,7 @@ const CategoriesList = () => {
   const dispatch = useDispatch();
 
   const dataCategories = useSelector((state) => state.categoriesState);
-
+  console.log(dataCategories)
   useEffect(() => {
     dispatch(fetchCategories());
   }, []);
@@ -61,28 +61,25 @@ const CategoriesList = () => {
     <Container className={classes.cardGrid} maxWidth="md">
       <Grid container spacing={4}>
         {dataCategories.categories.map((item, idx) => (
-          <Grid  item key={idx} xs={12} sm={6} md={4}>
-            <Card className={classes.card}>
-              <CardMedia 
-                className={classes.cardMedia}
-                image="https://source.unsplash.com/random"
-                title={item}
-              />
-              <CardContent  className={classes.cardContent}>
-                <Typography gutterBottom variant="h5" component="h2">
-                 {item}
-                </Typography>
-                <Typography>
-                  This is a media card. You can use this section to describe the
-                  content.
-                </Typography>
-              </CardContent>
-              <CardActions>
-                <Button size="small" color="primary">
-                  View
-                </Button>
-              </CardActions>
-            </Card>
+          <Grid item key={idx} xs={12} sm={6} md={4}>
+            <NavLink to={`categories/${item}`}>
+              <Card className={classes.card}>
+                <CardContent className={classes.cardContent}>
+                  <Typography gutterBottom variant="h5" component="h2">
+                    {item}
+                  </Typography>
+                  <Typography>
+                    This is a media card. You can use this section to describe
+                    the content.
+                  </Typography>
+                </CardContent>
+                <CardActions>
+                  <Button size="small" color="primary">
+                    See more
+                  </Button>
+                </CardActions>
+              </Card>
+            </NavLink>
           </Grid>
         ))}
       </Grid>
@@ -91,6 +88,3 @@ const CategoriesList = () => {
 };
 
 export default CategoriesList;
-
-//1)parse all categories
-//2) fetch from store all categories and display all categories in the components
